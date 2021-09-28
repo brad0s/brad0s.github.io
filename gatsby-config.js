@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Brados Blogs`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Braden Wright`,
+      summary: `who is striving to become a developer 👨🏼‍💻.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A blog to help me understand what I've been learning.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `Braden23763605`,
     },
   },
   plugins: [
@@ -16,8 +16,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/article`,
+        name: `article`,
       },
     },
     {
@@ -120,7 +120,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `static/favicon.ico`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

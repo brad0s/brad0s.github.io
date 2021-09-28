@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "brados blogs",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A blog page for Braden Wright where he posts about different things that he has learned while programming.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Braden Wright <wrighttbraden@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -52,6 +52,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build && gh-pages -d public -b main"
   }
 }

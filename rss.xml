@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brados Blogs]]></title><description><![CDATA[A blog to help me understand what I've been learning.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 29 Sep 2021 00:37:54 GMT</lastBuildDate><item><title><![CDATA[ES6 cheat sheet]]></title><description><![CDATA[Table of Contents  Variables and constant feature comparison Variable declaration  scope Constant declaration Arrow Functions Template…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-28-2021_ES6-cheat-sheet/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-28-2021_ES6-cheat-sheet/</guid><pubDate>Tue, 28 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Table of Contents &lt;!-- omit in toc --&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brados Blogs]]></title><description><![CDATA[A blog to help me understand what I've been learning.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 29 Sep 2021 01:47:06 GMT</lastBuildDate><item><title><![CDATA[ES6 cheat sheet]]></title><description><![CDATA[Table of Contents  Variables and constant feature comparison Variable declaration  scope Constant declaration Arrow Functions Template…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-28-2021_ES6-cheat-sheet/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-28-2021_ES6-cheat-sheet/</guid><pubDate>Tue, 28 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Table of Contents &lt;!-- omit in toc --&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#variables-and-constant-feature-comparison&quot;&gt;Variables and constant feature comparison&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#variable-declaration&quot;&gt;Variable declaration&lt;/a&gt;
@@ -642,41 +642,42 @@ doFirst&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
   &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; ··· &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;finally&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// logic independent of success/error })&lt;/span&gt;
 
-&lt;span class=&quot;token comment&quot;&gt;// The handler is called when the promise is fulfilled or rejected.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[React Component: Text Input]]></title><description><![CDATA[A foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-27-2021_/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-27-2021_/</guid><pubDate>Mon, 27 Sep 2021 10:00:00 GMT</pubDate><content:encoded>&lt;p&gt;A foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto-correction, auto-capitalization, placeholder text, and different keyboard types, such as a numeric keypad.&lt;/p&gt;
-&lt;p&gt;The most basic use case is to plop down a TextInput and subscribe to the onChangeText events to read the user input. There are also other events, such as onSubmitEditing and onFocus that can be subscribed to. A minimal example:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React from &quot;react&quot;;
-import { SafeAreaView, StyleSheet, TextInput } from &quot;react-native&quot;;
-
-const UselessTextInput = () =&gt; {
-  const [text, onChangeText] = React.useState(&quot;Useless Text&quot;);
-  const [number, onChangeNumber] = React.useState(null);
-
-  return (
-    &amp;lt;SafeAreaView&gt;
-      &amp;lt;TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
-      /&gt;
-      &amp;lt;TextInput
-        style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
-        placeholder=&quot;useless placeholder&quot;
-        keyboardType=&quot;numeric&quot;
-      /&gt;
-    &amp;lt;/SafeAreaView&gt;
-  );
-};
-
-const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-});
-
-export default UselessTextInput;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Two methods exposed via the native element are .focus() and .blur() that will focus or blur the TextInput programmatically.&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;span class=&quot;token comment&quot;&gt;// The handler is called when the promise is fulfilled or rejected.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[How to deploy a gatsby site with github pages]]></title><description><![CDATA[I recently tried deploying a gatsby site using github pages and had some trouble while following the docs. So, I thought that I would share…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-17-2021_Deploy-gatsby-on-github-pages/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-17-2021_Deploy-gatsby-on-github-pages/</guid><pubDate>Fri, 17 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I recently tried deploying a gatsby site using github pages and had some trouble while following the docs. So, I thought that I would share how I did it to maybe help someone having trouble like me to get it working.&lt;/p&gt;
+&lt;p&gt;the docs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/#deploying-to-a-github-pages-subdomain-at-githubio&quot;&gt;gatsby docs for github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;github pages docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Don’t worry about going to the docs because I’ll cover the important steps here so you can follow along. But definitely look over them if you’re having trouble.&lt;/p&gt;
+&lt;h3&gt;Github&lt;/h3&gt;
+&lt;h4&gt;Create a reposiotry&lt;/h4&gt;
+&lt;p&gt;The first thing we have to do is head over to github and create a repository for our gatsby site. You have to use this format when creating the name for the repo: ${username}.github.io.
+Make sure it’s public and then click ‘create repository’.&lt;/p&gt;
+&lt;h4&gt;Initalize the repo&lt;/h4&gt;
+&lt;p&gt;Next, we need to initalize our gatsby project with the github repository that we just created. Navigate to the project root directory of the gatsby project and use these commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;git init&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;git add .&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;git commit -m &quot;init&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;git branch -M main&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;git remote add origin git@github.com:${username}/${username}.github.io.gi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;git push -u origin main&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Modify git settings&lt;/h4&gt;
+&lt;p&gt;We’re going to have to create a new branch to use for development. In the terminal run &lt;code class=&quot;language-text&quot;&gt;git checkout -b develop main&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;main&lt;/code&gt; will be used for deployment and &lt;code class=&quot;language-text&quot;&gt;develop&lt;/code&gt; will be our default branch that we will make changes to and track our code.&lt;/p&gt;
+&lt;p&gt;On github navigate to our repo, and click on Settings &gt; Branches and select develop to be the default branch.&lt;/p&gt;
+&lt;p&gt;Navigate to Settings &gt; Pages and under Source make sure that our main branch is selected and click ‘Save’.&lt;/p&gt;
+&lt;p&gt;😮‍💨 Great, we’re alomst done! We’ve finished our setup on github and now we need to make some changes to our gatsby project.&lt;/p&gt;
+&lt;h3&gt;Gatsby&lt;/h3&gt;
+&lt;h4&gt;install &lt;code class=&quot;language-text&quot;&gt;gh-pages&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;In the project root direct run &lt;code class=&quot;language-text&quot;&gt;npm install gh-pages --save-dev&lt;/code&gt; in the terminal.&lt;/p&gt;
+&lt;h4&gt;create a deploy script&lt;/h4&gt;
+&lt;p&gt;Modify package.json by adding a deploy script:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;deploy&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;gatsby build &amp;amp;&amp;amp; gh-pages -d public -b main&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now let’s deploy it!&lt;/p&gt;
+&lt;p&gt;In our terminal run &lt;code class=&quot;language-text&quot;&gt;npm run deploy&lt;/code&gt;. Make sure we are using the develop branch. After is finishes you will be able to view the gatsby project at the url defined in guthub! 🎉&lt;/p&gt;</content:encoded></item></channel></rss>

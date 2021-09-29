@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brados Blogs]]></title><description><![CDATA[A blog to help me understand what I've been learning.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 29 Sep 2021 00:10:53 GMT</lastBuildDate><item><title><![CDATA[ES6 cheat sheet]]></title><description><![CDATA[Table of Contents  Variables and constant feature comparison Variable declaration  scope Constant declaration Arrow Functions Template…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-28-2021_ES6-cheat-sheet/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-28-2021_ES6-cheat-sheet/</guid><pubDate>Tue, 28 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Table of Contents &lt;!-- omit in toc --&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brados Blogs]]></title><description><![CDATA[A blog to help me understand what I've been learning.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 29 Sep 2021 00:37:54 GMT</lastBuildDate><item><title><![CDATA[ES6 cheat sheet]]></title><description><![CDATA[Table of Contents  Variables and constant feature comparison Variable declaration  scope Constant declaration Arrow Functions Template…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-28-2021_ES6-cheat-sheet/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-28-2021_ES6-cheat-sheet/</guid><pubDate>Tue, 28 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Table of Contents &lt;!-- omit in toc --&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#variables-and-constant-feature-comparison&quot;&gt;Variables and constant feature comparison&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#variable-declaration&quot;&gt;Variable declaration&lt;/a&gt;
@@ -642,4 +642,41 @@ doFirst&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
   &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; ··· &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;finally&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// logic independent of success/error })&lt;/span&gt;
 
-&lt;span class=&quot;token comment&quot;&gt;// The handler is called when the promise is fulfilled or rejected.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
+&lt;span class=&quot;token comment&quot;&gt;// The handler is called when the promise is fulfilled or rejected.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[React Component: Text Input]]></title><description><![CDATA[A foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-27-2021_/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.ioarticles/09-27-2021_/</guid><pubDate>Mon, 27 Sep 2021 10:00:00 GMT</pubDate><content:encoded>&lt;p&gt;A foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto-correction, auto-capitalization, placeholder text, and different keyboard types, such as a numeric keypad.&lt;/p&gt;
+&lt;p&gt;The most basic use case is to plop down a TextInput and subscribe to the onChangeText events to read the user input. There are also other events, such as onSubmitEditing and onFocus that can be subscribed to. A minimal example:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React from &quot;react&quot;;
+import { SafeAreaView, StyleSheet, TextInput } from &quot;react-native&quot;;
+
+const UselessTextInput = () =&gt; {
+  const [text, onChangeText] = React.useState(&quot;Useless Text&quot;);
+  const [number, onChangeNumber] = React.useState(null);
+
+  return (
+    &amp;lt;SafeAreaView&gt;
+      &amp;lt;TextInput
+        style={styles.input}
+        onChangeText={onChangeText}
+        value={text}
+      /&gt;
+      &amp;lt;TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder=&quot;useless placeholder&quot;
+        keyboardType=&quot;numeric&quot;
+      /&gt;
+    &amp;lt;/SafeAreaView&gt;
+  );
+};
+
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
+
+export default UselessTextInput;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Two methods exposed via the native element are .focus() and .blur() that will focus or blur the TextInput programmatically.&lt;/p&gt;</content:encoded></item></channel></rss>

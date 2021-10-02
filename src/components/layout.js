@@ -27,6 +27,8 @@ const Layout = ({ location, title, children }) => {
       <footer className="footer">
         © {new Date().getFullYear()} Braden Wright
         <div>
+          <a href="https://bradenwrightportfolio.gatsbyjs.io/">portfolio</a>{" "}
+          •&nbsp;
           <a href="https://github.com/brad0s">github</a> •&nbsp;
           <a href="https://twitter.com/Braden23763605">twitter</a> •&nbsp;
           <a href="https://www.linkedin.com/in/wright-braden/">linkedin</a>

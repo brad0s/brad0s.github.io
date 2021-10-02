@@ -1,0 +1,658 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.80cb6c4649baa091535e.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Roboto Mono;font-style:normal;font-weight:100;src:local("Roboto Mono Thin "),local("Roboto Mono-Thin"),url(/static/roboto-mono-latin-100-7f7e9cd596438fea4b02e3c9b21a92b5.woff2) format("woff2"),url(/static/roboto-mono-latin-100-da65dcd09cdc4863ece2402e959bfe70.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:italic;font-weight:100;src:local("Roboto Mono Thin italic"),local("Roboto Mono-Thinitalic"),url(/static/roboto-mono-latin-100italic-d97850bb044fb5584361aa00e3c596f6.woff2) format("woff2"),url(/static/roboto-mono-latin-100italic-16b1558858fe1064b5af8cc6c1c4dbf3.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:normal;font-weight:200;src:local("Roboto Mono Extra Light "),local("Roboto Mono-Extra Light"),url(/static/roboto-mono-latin-200-969a44e1b6fc26105bd6fc5cc0c9a3bd.woff2) format("woff2"),url(/static/roboto-mono-latin-200-640f8692dc49a19f15412c3d3cf7ff2f.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:italic;font-weight:200;src:local("Roboto Mono Extra Light italic"),local("Roboto Mono-Extra Lightitalic"),url(/static/roboto-mono-latin-200italic-9216be4e13fe7dbe70efe51c7872b1f0.woff2) format("woff2"),url(/static/roboto-mono-latin-200italic-ca100b2be6274105bb160594a4c984e4.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:normal;font-weight:300;src:local("Roboto Mono Light "),local("Roboto Mono-Light"),url(/static/roboto-mono-latin-300-bfe6eaec56c141a0bd7227262d1e249e.woff2) format("woff2"),url(/static/roboto-mono-latin-300-2900d24e7347deaf65cd76c5294d5bc4.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:italic;font-weight:300;src:local("Roboto Mono Light italic"),local("Roboto Mono-Lightitalic"),url(/static/roboto-mono-latin-300italic-cc9e42999888377183f88eb10cf2919d.woff2) format("woff2"),url(/static/roboto-mono-latin-300italic-24a9d3bbf9b715214bf5e83e33574b56.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:normal;font-weight:400;src:local("Roboto Mono Regular "),local("Roboto Mono-Regular"),url(/static/roboto-mono-latin-400-535bc89d4af715503b01afd761501e58.woff2) format("woff2"),url(/static/roboto-mono-latin-400-498042b7fe9cd07b4fd11a0965093e55.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:italic;font-weight:400;src:local("Roboto Mono Regular italic"),local("Roboto Mono-Regularitalic"),url(/static/roboto-mono-latin-400italic-b39a11f9a6107e57a21f0c399cd3218b.woff2) format("woff2"),url(/static/roboto-mono-latin-400italic-1ce08cfde36c0d81af5b60c1a4ab895e.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:normal;font-weight:500;src:local("Roboto Mono Medium "),local("Roboto Mono-Medium"),url(/static/roboto-mono-latin-500-c1f17364fee75703a7eefdc41120adcc.woff2) format("woff2"),url(/static/roboto-mono-latin-500-2ed4651232a34d737777674fb9b2dbf7.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:italic;font-weight:500;src:local("Roboto Mono Medium italic"),local("Roboto Mono-Mediumitalic"),url(/static/roboto-mono-latin-500italic-51aa168dd4ba03bd83f0a799c11a705d.woff2) format("woff2"),url(/static/roboto-mono-latin-500italic-79f21d796f266ce0ea70e74a7fc7b11b.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:normal;font-weight:600;src:local("Roboto Mono SemiBold "),local("Roboto Mono-SemiBold"),url(/static/roboto-mono-latin-600-ff2c5c919a01e9ddda8532d1a8bbb4c9.woff2) format("woff2"),url(/static/roboto-mono-latin-600-bbbf6951525a78fff340f2c42c3ba853.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:italic;font-weight:600;src:local("Roboto Mono SemiBold italic"),local("Roboto Mono-SemiBolditalic"),url(/static/roboto-mono-latin-600italic-53b43867955fbecc811a82030cefe8a4.woff2) format("woff2"),url(/static/roboto-mono-latin-600italic-213eedde97d22010287cf492a821e563.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:normal;font-weight:700;src:local("Roboto Mono Bold "),local("Roboto Mono-Bold"),url(/static/roboto-mono-latin-700-c5c3959c04004102ea46462160ada846.woff2) format("woff2"),url(/static/roboto-mono-latin-700-eba647ae67ba7dc20f05d588ba823ded.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto Mono;font-style:italic;font-weight:700;src:local("Roboto Mono Bold italic"),local("Roboto Mono-Bolditalic"),url(/static/roboto-mono-latin-700italic-bc628a95b5026af0df2ce793f7d71106.woff2) format("woff2"),url(/static/roboto-mono-latin-700italic-bf4b4e73015a3066da91b7f394a6ff70.woff) format("woff")}
+
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden]{display:none}:root{--maxWidth-none:"none";--maxWidth-xs:20rem;--maxWidth-sm:24rem;--maxWidth-md:28rem;--maxWidth-lg:32rem;--maxWidth-xl:36rem;--maxWidth-2xl:42rem;--maxWidth-3xl:48rem;--maxWidth-4xl:56rem;--maxWidth-full:"100%";--maxWidth-wrapper:var(--maxWidth-2xl);--spacing-px:"1px";--spacing-0:0;--spacing-1:0.25rem;--spacing-2:0.5rem;--spacing-3:0.75rem;--spacing-4:1rem;--spacing-5:1.25rem;--spacing-6:1.5rem;--spacing-8:2rem;--spacing-10:2.5rem;--spacing-12:3rem;--spacing-16:4rem;--spacing-20:5rem;--spacing-24:6rem;--spacing-32:8rem;--fontFamily-sans:Roboto,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--fontFamily-serif:"Roboto Mono",monospace;--font-body:var(--fontFamily-serif);--font-heading:var(--fontFamily-sans);--fontWeight-normal:400;--fontWeight-medium:500;--fontWeight-semibold:600;--fontWeight-bold:700;--fontWeight-extrabold:800;--fontWeight-black:900;--fontSize-root:16px;--lineHeight-none:1;--lineHeight-tight:1.1;--lineHeight-normal:1.5;--lineHeight-relaxed:1.625;--fontSize-0:0.833rem;--fontSize-1:1rem;--fontSize-2:1.2rem;--fontSize-3:1.44rem;--fontSize-4:1.728rem;--fontSize-5:2.074rem;--fontSize-6:2.488rem;--fontSize-7:2.986rem;--color-primary:#00d68e;--color-text:#fdfdfd;--color-text-light:#bababa;--color-heading:#c495fc;--color-heading-black:#f3f5f6;--color-accent:#c495fc;--color-background:#212121;--color-background-secondary:#474747}*,:after,:before{box-sizing:border-box}html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:var(--fontSize-root);line-height:var(--lineHeight-normal)}body{background-color:var(--color-background);color:var(--color-text);font-family:var(--font-body);font-size:var(--fontSize-1);letter-spacing:-.025em}footer{padding:var(--spacing-6) var(--spacing-0)}hr{background:var(--color-accent);background:linear-gradient(164deg,var(--color-primary) 30%,var(--color-accent) 85%);border:0;height:1px}h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);letter-spacing:-.025em;line-height:var(--lineHeight-tight);margin-bottom:var(--spacing-6);margin-top:var(--spacing-12);text-transform:lowercase}h2,h3,h4,h5,h6{color:var(--color-heading);font-weight:var(--fontWeight-bold)}h1{-webkit-text-fill-color:transparent;background:-webkit-linear-gradient(45deg,var(--color-primary) 20%,var(--color-heading) 50%);-webkit-background-clip:text;font-size:var(--fontSize-6);font-weight:var(--fontWeight-black)}h2{font-size:var(--fontSize-5)}h3{font-size:var(--fontSize-4)}h4{font-size:var(--fontSize-3)}h5{font-size:var(--fontSize-2)}h6{font-size:var(--fontSize-1)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:inherit;text-decoration:none}p{--baseline-multiplier:0.179;--x-height-multiplier:0.35;line-height:var(--lineHeight-relaxed);margin:var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0)}ol,p,ul{padding:var(--spacing-0)}ol,ul{list-style-image:none;list-style-position:outside;margin-bottom:var(--spacing-8);margin-left:var(--spacing-0);margin-right:var(--spacing-0)}ol li,ul li{padding-left:var(--spacing-0)}li>p,ol li,ul li{margin-bottom:calc(var(--spacing-8)/2)}li :last-child{margin-bottom:var(--spacing-0)}li>ul{margin-left:var(--spacing-8);margin-top:calc(var(--spacing-8)/2)}blockquote{border-left:var(--spacing-1) solid var(--color-primary);color:var(--color-text-light);font-size:var(--fontSize-2);font-style:italic;margin-bottom:var(--spacing-8);margin-left:calc(var(--spacing-6)*-1);margin-right:var(--spacing-8);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6)}blockquote>:last-child{margin-bottom:var(--spacing-0)}blockquote>ol,blockquote>ul{list-style-position:inside}table{border-collapse:collapse;border-spacing:.25rem;margin-bottom:var(--spacing-8);width:100%}table thead tr th{border-bottom:1px solid var(--color-accent)}a{color:var(--color-primary)}a:focus,a:hover{text-decoration:none}article>header{margin-bottom:var(--spacing-8)}.global-wrapper{margin:var(--spacing-0) auto;max-width:var(--maxWidth-wrapper);padding:var(--spacing-10) var(--spacing-5)}.global-wrapper[data-is-root-path=true] .bio{margin-bottom:var(--spacing-20)}.global-header{margin-bottom:var(--spacing-12)}.main-heading{font-size:var(--fontSize-7);margin:0}.post-list-item{margin-bottom:var(--spacing-8);margin-top:var(--spacing-8)}.post-list-item p{margin-bottom:var(--spacing-0)}.post-list-item h2{color:var(--color-primary);font-size:var(--fontSize-4);margin-bottom:var(--spacing-2);margin-top:var(--spacing-0)}.post-list-item header{margin-bottom:var(--spacing-4)}.header-link-home{font-family:var(--font-heading);font-size:var(--fontSize-2);font-weight:var(--fontWeight-bold);text-decoration:none;text-transform:lowercase}.bio{display:flex;margin-bottom:var(--spacing-16)}.bio-avatar,.bio p{margin-bottom:var(--spacing-0)}.bio-avatar{border-radius:50%;margin-right:var(--spacing-4);min-width:50px}.blog-post header h1{margin:var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0)}.blog-post header p{font-family:var(--font-heading);font-size:var(--fontSize-2)}.blog-post-nav ul{margin:var(--spacing-0)}.gatsby-highlight{margin-bottom:var(--spacing-8)}.footer{justify-content:space-between}.footer,.tags{display:flex}.tags>div{background-color:var(--color-background-secondary);border-radius:3px;color:var(--color-text);font-size:var(--fontSize-0);margin:var(--spacing-1);padding:var(--spacing-1)}@media (max-width:42rem){blockquote{margin-left:var(--spacing-0);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4)}ol,ul{list-style-position:inside}}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 3.13.1"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=79bb68e3bd48124e1a04b461132fba6f" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=79bb68e3bd48124e1a04b461132fba6f"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=79bb68e3bd48124e1a04b461132fba6f"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=79bb68e3bd48124e1a04b461132fba6f"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=79bb68e3bd48124e1a04b461132fba6f"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=79bb68e3bd48124e1a04b461132fba6f"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=79bb68e3bd48124e1a04b461132fba6f"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=79bb68e3bd48124e1a04b461132fba6f"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=79bb68e3bd48124e1a04b461132fba6f"/><title data-react-helmet="true">How to integrate Stripe in a react native application | Brados Blogs</title><meta data-react-helmet="true" name="description" content="Stripe is one of the biggest payment gateways. Learn how to integrate stripe into a react-native application with this how-to guide."/><meta data-react-helmet="true" property="og:title" content="How to integrate Stripe in a react native application"/><meta data-react-helmet="true" property="og:description" content="Stripe is one of the biggest payment gateways. Learn how to integrate stripe into a react-native application with this how-to guide."/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Braden23763605"/><meta data-react-helmet="true" name="twitter:title" content="How to integrate Stripe in a react native application"/><meta data-react-helmet="true" name="twitter:description" content="Stripe is one of the biggest payment gateways. Learn how to integrate stripe into a react-native application with this how-to guide."/><link as="script" rel="preload" href="/webpack-runtime-b0eacb15146f79d84385.js"/><link as="script" rel="preload" href="/framework-cf5212c73f65bdd9ee4a.js"/><link as="script" rel="preload" href="/app-36b5580612c5bac90cd8.js"/><link as="script" rel="preload" href="/commons-69a2e1a158d1cf8bc945.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-9bce82e63da9cd73203d.js"/><link as="fetch" rel="preload" href="/page-data/articles/09-23-2021_React_native_and_stripe_integration/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2841359383.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3257411868.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="global-wrapper" data-is-root-path="false"><header class="global-header"><a class="header-link-home" href="/">Brados Blogs</a></header><main><article class="blog-post" itemscope="" itemType="http://schema.org/Article"><header><h1 itemProp="headline">How to integrate Stripe in a react native application</h1><div><small>September 12, 2021</small><small> • <!-- -->13<!-- --> min read</small><div class="tags"><div>javascript</div><div>react-native</div><div>stripe</div></div></div></header><section itemProp="articleBody"><p>This is a how-to on integrating stripe with a react native app. I recently tried this out and learned some things along the way. Hopefully, this will help you guys integrate it and not leave you confused as I was while I was trying to figure it out.</p>
+<p><a href="https://stripe.com/docs">Stripe</a> is a SaaS that offers an easy to plugin way to accept payments to your app/website. Stripe allows you to user their software to accept payments and grow your business without the overhead of managing all of that on your own.</p>
+<p>Let’s get to it 🤟</p>
+<h2>Create a stripe account</h2>
+<p>In order to use stripe in our application, we will need to create an account with them so that we have the required access keys needed.</p>
+<p>Go to <a href="https://dashboard.stripe.com/register">https://dashboard.stripe.com/register</a> to create an account. Next, you need to get your private keys. From the dashboard, you can click on Developers in the upper right part of the screen, then click on API Keys on the left side of the screen. You will now see a publishable key and secret key. You will need these later.</p>
+<h2>Installation</h2>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">$ npx react-native init stripeExample</code></pre></div>
+<p>We need to install some packages first to help get us started. I’ll breeze through this part. If you have trouble refer to the documentation. <code class="language-text">cd</code> into the project folder and let’s install these packages.</p>
+<h3>navigation</h3>
+<p>These will be used for basic navigation. Refer to the <a href="https://reactnavigation.org/docs/getting-started/">react-navigation docs</a></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">$ yarn add @react-navigation/native react-native-screens react-native-safe-area-context @react-navigation/native-stack</code></pre></div>
+<p>run <code class="language-text">pod install</code> in <code class="language-text">ios</code> directory</p>
+<h3>stripe</h3>
+<p><a href="https://github.com/stripe/stripe-react-native">React native stripe docs</a></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">yarn add @stripe/stripe-react-native</code></pre></div>
+<p>run <code class="language-text">pod install</code> in <code class="language-text">ios</code> directory</p>
+<h5>trouble shooting ios errors</h5>
+<h6>errors after installing with npm</h6>
+<p>If you were to build your app now, you would get some errors. We need to make some changes in ios to fix these errors. Open <code class="language-text">stripeExample.xcworkspace</code> in xcode and and go to Build Settings and set ‘iOS Deployment Target’ to iOS 11.0.</p>
+<p>Now open <code class="language-text">podfile</code> and update line 4 to read <code class="language-text">platform :ios, '11.0'</code>.</p>
+<h6>errors with x86_64 mac</h6>
+<p>If you’re still getting an error you can reference this <a href="https://github.com/stripe/stripe-react-native/#undefined-symbols-for-architecture-x86_64-on-ios">fix</a> to resolve the error.
+The steps to fix are listed below:</p>
+<blockquote>
+<p>Open your project via Xcode, go to project -> build settings, find library search paths and remove all swift related entries such as: $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) and $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME).</p>
+<p>Create a new Swift file to the project (File > New > File > Swift), give it any name (e.g. Fix.swift) and create a bridging header when prompted by Xcode.</p>
+</blockquote>
+<h6>RCTBridge error</h6>
+<p>If you encouter some sort of RTCBridge error, you will need to make some changes to your ios code. The changes below fixed the problem for me. You can refer to this <a href="https://github.com/facebook/react-native/issues/16376#issuecomment-810094592">issue</a> on github if it doesn’t work for you.</p>
+<p>AppDelegate.h</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">#import "AppDelegate.h"
+// NEW CODE
+
+#if RCT_DEV
+#import &lt;React/RCTDevLoadingView.h>
+#endif
+
+// END</code></pre></div>
+<p>AppDelegate.m</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+  // NEW CODE
+
+  #if RCT_DEV
+   [bridge moduleForClass:[RCTDevLoadingView class]];
+  #endif
+
+  // END
+
+  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
+                                                   moduleName:@"TempleWallet"
+                                            initialProperties:nil];
+  ...</code></pre></div>
+<p>Now let’s run our app. You should be able to build the app successfully at this point. 🤓</p>
+<p><code class="language-text">$ react-native run-ios</code></p>
+<h2>Building the app</h2>
+<p>Now that we’ve got all the set-up and installation out the way we can start building out the app.<br>
+Let’s start by creating a simple home screen that will have a button that we can press to initiate the payment process. At the root of the project create <code class="language-text">src > screens > HomeScreen.js</code>.<br>
+Copy and past this into <code class="language-text">HomeScreen.js</code>:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// HomeScreen.js</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> View<span class="token punctuation">,</span> Text<span class="token punctuation">,</span> StatusBar<span class="token punctuation">,</span> Pressable<span class="token punctuation">,</span> StyleSheet <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-native"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">HomeScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>View style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>container<span class="token punctuation">}</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>StatusBar barStyle<span class="token operator">=</span><span class="token string">"light-content"</span> <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Pressable
+        style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>button<span class="token punctuation">}</span>
+        onPress<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Todo: Navigate to payment screen"</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+      <span class="token operator">></span>
+        <span class="token operator">&lt;</span>Text style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>label<span class="token punctuation">}</span><span class="token operator">></span>Buy<span class="token operator">&lt;</span><span class="token operator">/</span>Text<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Pressable<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>View<span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> styles <span class="token operator">=</span> StyleSheet<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  container<span class="token operator">:</span> <span class="token punctuation">{</span>
+    flex<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    alignItems<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    justifyContent<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">"#141414"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  button<span class="token operator">:</span> <span class="token punctuation">{</span>
+    borderRadius<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    width<span class="token operator">:</span> <span class="token number">150</span><span class="token punctuation">,</span>
+    padding<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    alignItems<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    justifyContent<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">"#5941A9"</span><span class="token punctuation">,</span>
+    height<span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  label<span class="token operator">:</span> <span class="token punctuation">{</span>
+    fontSize<span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+    fontWeight<span class="token operator">:</span> <span class="token string">"800"</span><span class="token punctuation">,</span>
+    letterSpacing<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    textTransform<span class="token operator">:</span> <span class="token string">"uppercase"</span><span class="token punctuation">,</span>
+    color<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<ul>
+<li>Basically, all we are doing is creating a button (<code class="language-text">Pressable</code>) that will naviagte us to the payment screen.</li>
+</ul>
+<p>Before we create the next screen, let’s create some navigation so that we will actually be able to navigate to that screen.<br>
+Create <code class="language-text">src > utils > Navigation.js</code>. Edit <code class="language-text">Navigation.js</code> to look like the following:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Navigation.js</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> NavigationContainer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@react-navigation/native"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createNativeStackNavigator <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@react-navigation/native-stack"</span>
+
+<span class="token keyword">import</span> HomeScreen <span class="token keyword">from</span> <span class="token string">"../screens/HomeScreen"</span>
+<span class="token keyword">import</span> CardScreen <span class="token keyword">from</span> <span class="token string">"../screens/CardScreen"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Navigation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> RootStack <span class="token operator">=</span> <span class="token function">createNativeStackNavigator</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">RootStackScreen</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>RootStack<span class="token punctuation">.</span>Navigator<span class="token operator">></span>
+      <span class="token operator">&lt;</span>RootStack<span class="token punctuation">.</span>Screen
+        name<span class="token operator">=</span><span class="token string">"Home"</span>
+        component<span class="token operator">=</span><span class="token punctuation">{</span>HomeScreen<span class="token punctuation">}</span>
+        options<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> headerShown<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>RootStack<span class="token punctuation">.</span>Screen
+        name<span class="token operator">=</span><span class="token string">"Card"</span>
+        component<span class="token operator">=</span><span class="token punctuation">{</span>CardScreen<span class="token punctuation">}</span>
+        options<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+          headerStyle<span class="token operator">:</span> <span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">"#5941A9"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          headerTintColor<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>RootStack<span class="token punctuation">.</span>Navigator<span class="token operator">></span>
+  <span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>NavigationContainer<span class="token operator">></span>
+      <span class="token operator">&lt;</span>RootStackScreen <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>NavigationContainer<span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Change <code class="language-text">App.js</code> to return Navigation instead of HomeScreen.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// App.js</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span>
+<span class="token keyword">import</span> Navigation <span class="token keyword">from</span> <span class="token string">"./src/utils/Navigation"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>Navigation <span class="token operator">/</span><span class="token operator">></span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Now that we can navigate between screens, let’s create our <code class="language-text">CardScreen.js</code>. This will handle our payment logic and will be where our stripe implementation will be.</p>
+<p><code class="language-text">CardScreen.js</code></p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// CardScreen.js</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> View<span class="token punctuation">,</span> Text<span class="token punctuation">,</span> TextInput<span class="token punctuation">,</span> Pressable<span class="token punctuation">,</span> StyleSheet <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-native"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CardField <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@stripe/stripe-react-native"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">CardScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>name<span class="token punctuation">,</span> setName<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>cardFocused<span class="token punctuation">,</span> setCardFocused<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>nameFocused<span class="token punctuation">,</span> setNameFocused<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> <span class="token function-variable function">handlePayPress</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Todo: handlePayPress"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>View style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>container<span class="token punctuation">}</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Text<span class="token operator">></span>Card<span class="token operator">&lt;</span><span class="token operator">/</span>Text<span class="token operator">></span>
+      <span class="token operator">&lt;</span>TextInput
+        style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">[</span>styles<span class="token punctuation">.</span>input<span class="token punctuation">,</span> nameFocused <span class="token operator">&amp;&amp;</span> <span class="token punctuation">{</span> borderBottomColor<span class="token operator">:</span> <span class="token string">"#5941A9"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+        placeholder<span class="token operator">=</span><span class="token string">"Name"</span>
+        placeholderTextColor<span class="token operator">=</span><span class="token string">"#B8B8B8"</span>
+        onChangeText<span class="token operator">=</span><span class="token punctuation">{</span>setName<span class="token punctuation">}</span>
+        value<span class="token operator">=</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span>
+        keyboardType<span class="token operator">=</span><span class="token string">"default"</span>
+        onFocus<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token function">setNameFocused</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        onBlur<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token function">setNameFocused</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>CardField
+        postalCodeEnabled<span class="token operator">=</span><span class="token punctuation">{</span><span class="token boolean">false</span><span class="token punctuation">}</span>
+        style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">[</span>styles<span class="token punctuation">.</span>cardField<span class="token punctuation">,</span> cardFocused <span class="token operator">&amp;&amp;</span> <span class="token punctuation">{</span> borderColor<span class="token operator">:</span> <span class="token string">"#5941A9"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+        cardStyle<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> textColor<span class="token operator">:</span> <span class="token string">"#fff"</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        onFocus<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">focusedField</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"focusField"</span><span class="token punctuation">,</span> focusedField<span class="token punctuation">)</span>
+          <span class="token function">setCardFocused</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        onBlur<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token function">setCardFocused</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Pressable style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>button<span class="token punctuation">}</span> onPress<span class="token operator">=</span><span class="token punctuation">{</span>handlePayPress<span class="token punctuation">}</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>Text style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>label<span class="token punctuation">}</span><span class="token operator">></span>Pay<span class="token operator">&lt;</span><span class="token operator">/</span>Text<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Pressable<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>View<span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> styles <span class="token operator">=</span> StyleSheet<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  container<span class="token operator">:</span> <span class="token punctuation">{</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">"#141414"</span><span class="token punctuation">,</span>
+    flex<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    paddingHorizontal<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  cardField<span class="token operator">:</span> <span class="token punctuation">{</span>
+    height<span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+    borderColor<span class="token operator">:</span> <span class="token string">"#2F2258"</span><span class="token punctuation">,</span>
+    borderWidth<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    borderRadius<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    marginVertical<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  text<span class="token operator">:</span> <span class="token punctuation">{</span>
+    color<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  button<span class="token operator">:</span> <span class="token punctuation">{</span>
+    borderRadius<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    width<span class="token operator">:</span> <span class="token number">150</span><span class="token punctuation">,</span>
+    padding<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    alignItems<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    justifyContent<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">"#5941A9"</span><span class="token punctuation">,</span>
+    height<span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+    alignSelf<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  label<span class="token operator">:</span> <span class="token punctuation">{</span>
+    fontSize<span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+    fontWeight<span class="token operator">:</span> <span class="token string">"800"</span><span class="token punctuation">,</span>
+    letterSpacing<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    textTransform<span class="token operator">:</span> <span class="token string">"uppercase"</span><span class="token punctuation">,</span>
+    color<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  input<span class="token operator">:</span> <span class="token punctuation">{</span>
+    color<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+    borderBottomColor<span class="token operator">:</span> <span class="token string">"#2F2258"</span><span class="token punctuation">,</span>
+    borderBottomWidth<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    height<span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+    fontSize<span class="token operator">:</span> <span class="token number">17</span><span class="token punctuation">,</span>
+    letterSpacing<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    paddingHorizontal<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<ul>
+<li><code class="language-text">CardField</code> is a component that comes from Stripe. Stripe gives us access to these components with built in UI so we don’t have to do that part.</li>
+</ul>
+<p>Now we just need to be able to navigate to our <code class="language-text">CardScreen.js</code> from <code class="language-text">HomeScreen.js</code>
+Modify <code class="language-text">HomeScreen.js</code> by adding the <code class="language-text">navigation</code> prop and changing the onPress function to navigate to the Card screen:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// HomeScreen.js</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> View<span class="token punctuation">,</span> Text<span class="token punctuation">,</span> StatusBar<span class="token punctuation">,</span> Pressable<span class="token punctuation">,</span> StyleSheet <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-native"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">HomeScreen</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> navigation <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>View style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>container<span class="token punctuation">}</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>StatusBar barStyle<span class="token operator">=</span><span class="token string">"light-content"</span> <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Pressable
+        style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>button<span class="token punctuation">}</span>
+        onPress<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> navigation<span class="token punctuation">.</span><span class="token function">navigate</span><span class="token punctuation">(</span><span class="token string">"Card"</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+      <span class="token operator">></span>
+        <span class="token operator">&lt;</span>Text style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>label<span class="token punctuation">}</span><span class="token operator">></span>Buy<span class="token operator">&lt;</span><span class="token operator">/</span>Text<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Pressable<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>View<span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> styles <span class="token operator">=</span> StyleSheet<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  container<span class="token operator">:</span> <span class="token punctuation">{</span>
+    flex<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    alignItems<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    justifyContent<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">"#141414"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  button<span class="token operator">:</span> <span class="token punctuation">{</span>
+    borderRadius<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    width<span class="token operator">:</span> <span class="token number">150</span><span class="token punctuation">,</span>
+    padding<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    alignItems<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    justifyContent<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">"#5941A9"</span><span class="token punctuation">,</span>
+    height<span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  label<span class="token operator">:</span> <span class="token punctuation">{</span>
+    fontSize<span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+    fontWeight<span class="token operator">:</span> <span class="token string">"800"</span><span class="token punctuation">,</span>
+    letterSpacing<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    textTransform<span class="token operator">:</span> <span class="token string">"uppercase"</span><span class="token punctuation">,</span>
+    color<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p>Now we should be able to naviagte between the two screens. We still have to implement Stripe, but that will be the next step. Make sure your app is funcitonal before moving on. This is what it should look like:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 600px; margin-bottom: 2rem"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f5c25fc00252e12030b9d26eeaeac188/0a47e/home.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 216.45569620253164%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAArCAYAAAB4pah1AAAACXBIWXMAAAsTAAALEwEAmpwYAAABSklEQVRIx+1XvUrEQBjcF1DJZrPJnRuUFKY5EazEdKtgCjltPU4QzANY3ktYaCOCb6CNNja+28i3dzmSwOYHbZQtht395vuGXQgzhHmehyRJoLVGlmXgnEMIYYXv++s99aZpijzPURQFoigCKxvCMISUsjbQJtjso1laWUmWqJ77iDbBmoNdN+zqY32Gh8AJOkEn+I8Fl04StKKX21R9kPMteHxjhc0VlmfibL5pvaEa7WFXHWBnex8qnCCOJmZPNeJ6+2H53POje8z1O+anb1jcfuHu6hMz/Yrrkw/D2Z7NbE6sDxe4zJ5wkT3iZvqC2dkzpscPpkaczbWZPYAkpBxDBiNwL4TPI7OXwdhwtrBi7QHEDYTg8AVfn21iHZ+NCykn6ASd4B9NvV+wr3rqcdA/DK1VlLXBqUc/MXEcQylVA9WIG2SwPxH8Bqr0Nnd9rCtfAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Home screen screenshot"
+        title="Home screen screenshot"
+        src="/static/f5c25fc00252e12030b9d26eeaeac188/0a47e/home.png"
+        srcset="/static/f5c25fc00252e12030b9d26eeaeac188/c26ae/home.png 158w,
+/static/f5c25fc00252e12030b9d26eeaeac188/6bdcf/home.png 315w,
+/static/f5c25fc00252e12030b9d26eeaeac188/0a47e/home.png 600w"
+        sizes="(max-width: 600px) 100vw, 600px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 600px; margin-bottom: 2rem"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/96b88a04ba48fe0703b5db6014036f5e/0a47e/card.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 216.45569620253164%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAArCAYAAAB4pah1AAAACXBIWXMAAAsTAAALEwEAmpwYAAACpklEQVRIx+2Wy08TURTGZ2+wM3Mf82qlD1KZESSghPDQUgJphAgYLLSUSqDiI240xIQFGzfuhWiUPwDQBEhcoEgMKxMX/k+fubetbadtINGdXfxy7pzvnG/OmdlcZSGxj8LUITYKJ1jPHyOT2Ec2+VGSGa2cG+XE+dHMETafnuLNqx/IjX+CMp/Yw/ztXSwk9pBJ7iMzuldH+tYu0iO79VqyErNjxV7l2f1jvFg8wfrSNxSmPiM7eoDc2CFyYwdYTB4gP36Il8un2Fj9jgcTRzInND+Lpaikk++QnXiP/J0dzCXe4u7gFqaHtktsYWZoG7nUB+QndzA7vI3pGr0ehegG1MsUWoCDUQsGd2AwpxhLZ0osEN0CZ3Yl3wTFcWx4XqfENA3ougpCdBCiVaGDUH+uMYpp2IhGOiSW6YBRE5yZMjJWgVfBfPqfPDWgiDV1zQDRTbkyldEurl1FcW0TlIjmWk3UC51TC4rJQwiHo7CtoJwwFovDcUKghIMxQ75VxHB7FB2xOCLhGAxugVFe1KiBoHNFelhGSKwchOu5CAaDsG0bvb29iEQj0DQdjDLQEq7roa/vBuLxq+Ccl74rkTESicLzXDhWOxTx55gc15aji78uVycUuq7LBhFVVUUgEICqBkAIlWuXKX8quTIhBJRSHwQ98VkMdT/GYFcBIz1rGL6+hsGuhxjufiI10efvFc9K+VCdpJTj3sgOVlNnWEl9xevnv7C59hPL419QSJ1JTdTU99GioR8hdndMYuDaCvrdJdzszKPfzcvzgLcitcab+QzLRSKqWhtU7VIT2mpqmxrWFrBzoA2nbLjy39AybBm2DFuGLcOW4X9u2OxWcJGauptDuVDcuDRNk7Gacs5ff+6EpmkiFArJe2M1Iie0C034Lwx/A80wjUZq7jcNAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Card screen screenshot"
+        title="Card screen screenshot"
+        src="/static/96b88a04ba48fe0703b5db6014036f5e/0a47e/card.png"
+        srcset="/static/96b88a04ba48fe0703b5db6014036f5e/c26ae/card.png 158w,
+/static/96b88a04ba48fe0703b5db6014036f5e/6bdcf/card.png 315w,
+/static/96b88a04ba48fe0703b5db6014036f5e/0a47e/card.png 600w"
+        sizes="(max-width: 600px) 100vw, 600px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<h2>Create a server for stripe</h2>
+<p>We need to create a server that stripe will use so we can communicate between stripe and our react native app.</p>
+<p>Create a new folder called <code class="language-text">server</code>. Navigate to the folder and run <code class="language-text">$ npm init -y</code>. After it’s set-up, run <code class="language-text">$ npm i express body-parser dotenv</code>.</p>
+<p>We also need to install stripe. <code class="language-text">$ npm install stripe --save</code>.</p>
+<p>Create <code class="language-text">server/server.js</code> and add this into it:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> resolve <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span>
+<span class="token comment">// Replace if using a different env file or config</span>
+<span class="token keyword">const</span> env <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"dotenv"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">"./.env"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> stripe <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"stripe"</span><span class="token punctuation">)</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">STRIPE_SECRET_KEY</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  apiVersion<span class="token operator">:</span> <span class="token string">"2020-08-27"</span><span class="token punctuation">,</span>
+  appInfo<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// For sample support and debugging, not required for production:</span>
+    name<span class="token operator">:</span> <span class="token string">"stripe-samples/accept-a-payment/custom-payment-flow"</span><span class="token punctuation">,</span>
+    version<span class="token operator">:</span> <span class="token string">"0.0.2"</span><span class="token punctuation">,</span>
+    url<span class="token operator">:</span> <span class="token string">"https://github.com/stripe-samples"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">static</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">STATIC_DIR</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  express<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// We need the raw body to verify webhook signatures.</span>
+    <span class="token comment">// Let's compute it only when hitting the Stripe webhook endpoint.</span>
+    <span class="token function-variable function">verify</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> buf</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>originalUrl<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"/webhook"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        req<span class="token punctuation">.</span>rawBody <span class="token operator">=</span> buf<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">resolve</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">STATIC_DIR</span> <span class="token operator">+</span> <span class="token string">"/index.html"</span><span class="token punctuation">)</span>
+  res<span class="token punctuation">.</span><span class="token function">sendFile</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/config"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Request /config</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    publishableKey<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">STRIPE_PUBLISHABLE_KEY</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/create-payment-intent"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> paymentMethodType<span class="token punctuation">,</span> currency <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body
+
+  <span class="token comment">// Each payment method type has support for different currencies. In order to</span>
+  <span class="token comment">// support many payment method types and several currencies, this server</span>
+  <span class="token comment">// endpoint accepts both the payment method type and the currency as</span>
+  <span class="token comment">// parameters.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// Some example payment method types include `card`, `ideal`, and `alipay`.</span>
+  <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token punctuation">{</span>
+    payment_method_types<span class="token operator">:</span> <span class="token punctuation">[</span>paymentMethodType<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    amount<span class="token operator">:</span> <span class="token number">1999</span><span class="token punctuation">,</span>
+    currency<span class="token operator">:</span> currency<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// If this is for an ACSS payment, we add payment_method_options to create</span>
+  <span class="token comment">// the Mandate.</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>paymentMethodType <span class="token operator">===</span> <span class="token string">"acss_debit"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    params<span class="token punctuation">.</span>payment_method_options <span class="token operator">=</span> <span class="token punctuation">{</span>
+      acss_debit<span class="token operator">:</span> <span class="token punctuation">{</span>
+        mandate_options<span class="token operator">:</span> <span class="token punctuation">{</span>
+          payment_schedule<span class="token operator">:</span> <span class="token string">"sporadic"</span><span class="token punctuation">,</span>
+          transaction_type<span class="token operator">:</span> <span class="token string">"personal"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Create a PaymentIntent with the amount, currency, and a payment method type.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// See the documentation [0] for the full list of supported parameters.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// [0] https://stripe.com/docs/api/payment_intents/create</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> paymentIntent <span class="token operator">=</span> <span class="token keyword">await</span> stripe<span class="token punctuation">.</span>paymentIntents<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+
+    <span class="token comment">// Send publishable key and PaymentIntent details to client</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      clientSecret<span class="token operator">:</span> paymentIntent<span class="token punctuation">.</span>client_secret<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      error<span class="token operator">:</span> <span class="token punctuation">{</span>
+        message<span class="token operator">:</span> e<span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Node server listening at http://localhost:3000</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre></div>
+<ul>
+<li>This gives us access to the endpoints that we need to interact with stripe in our app.</li>
+</ul>
+<p>Now we need to create a <code class="language-text">.env</code> file inside of the <code class="language-text">server</code> directory. Fill in the values for <code class="language-text">STRIPE_SECRET_KEY</code>, <code class="language-text">PRICE</code>, <code class="language-text">STRIPE_PUBLISHABLE_KEY</code>. For <code class="language-text">PRICE</code> we need to add a product to our stripe dashboard. We do this so all our data is safe in stripe and no one can hack the network request and change the price/amount that we charge someone.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">STRIPE_SECRET_KEY=secret_key
+STATIC_DIR=../
+PRICE=price_id
+DOMAIN=http://127.0.0.1:3000
+STRIPE_PUBLISHABLE_KEY=publishable_key</code></pre></div>
+<h2>Implement Stripe</h2>
+<p>Now that we have our app built out, we need to integrate stripe into our application so we can make payments to stripe.</p>
+<p>Modify <code class="language-text">App.js</code></p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> StripeProvider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@stripe/stripe-react-native"</span>
+
+<span class="token keyword">import</span> Navigation <span class="token keyword">from</span> <span class="token string">"./src/utils/Navigation"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> fetchPublishableKey <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"/src/utils/helpers"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>publishableKey<span class="token punctuation">,</span> setPublishableKey<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">init</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> publishableKey <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetchPublishableKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>publishableKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setPublishableKey</span><span class="token punctuation">(</span>publishableKey<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>StripeProvider publishableKey<span class="token operator">=</span><span class="token punctuation">{</span>publishableKey<span class="token punctuation">}</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Navigation <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>StripeProvider<span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<ul>
+<li><code class="language-text">StripeProvider</code> initializes stripe in our react native application.</li>
+<li><code class="language-text">publishableKey</code> is where we will store our publishable key.</li>
+<li><code class="language-text">fetchPublishableKey()</code> is a method that will get our publishable key from our stripe server. We haven’t created the method yet.</li>
+</ul>
+<p>Create <code class="language-text">fetchPublishableKey()</code> in <code class="language-text">src/utils/helper.js</code>:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">API_URL</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../config/StripeConfig"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">fetchPublishableKey</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">API_URL</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/config</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> publishableKey <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> publishableKey
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Error fetching publishable key."</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<ul>
+<li><code class="language-text">API_URL</code> is the url of our api. We will create this next.</li>
+<li><code class="language-text">fetchPublishableKey()</code> just makes a get request to our stripe server and the stripe server responds with our publishable key.</li>
+</ul>
+<p>Create <code class="language-text">StripeConfig.js</code> in <code class="language-text">src/config/StripeConfig.js</code>:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Platform <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-native"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">API_URL</span> <span class="token operator">=</span>
+  Platform<span class="token punctuation">.</span><span class="token constant">OS</span> <span class="token operator">===</span> <span class="token string">"android"</span> <span class="token operator">?</span> <span class="token string">"http://10.0.0.2:4242"</span> <span class="token operator">:</span> <span class="token string">"http://127.0.0.1:3000"</span></code></pre></div>
+<p>Now we need to edit <code class="language-text">CardScreen.js</code></p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> CardField<span class="token punctuation">,</span> useConfirmPayment <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@stripe/stripe-react-native"</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> View<span class="token punctuation">,</span> Text<span class="token punctuation">,</span> StyleSheet<span class="token punctuation">,</span> Pressable<span class="token punctuation">,</span> TextInput <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-native"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">API_URL</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../config/StripeConfig"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Card</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>name<span class="token punctuation">,</span> setName<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> confirmPayment<span class="token punctuation">,</span> loading <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useConfirmPayment</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>cardFocused<span class="token punctuation">,</span> setCardFocused<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>nameFocused<span class="token punctuation">,</span> setNameFocused<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> <span class="token function-variable function">handlePayPress</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">API_URL</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/create-payment-intent</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      method<span class="token operator">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+      headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      body<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        paymentMethodType<span class="token operator">:</span> <span class="token string">"card"</span><span class="token punctuation">,</span>
+        currency<span class="token operator">:</span> <span class="token string">"usd"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> clientSecret <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> error<span class="token punctuation">,</span> paymentIntent <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">confirmPayment</span><span class="token punctuation">(</span>clientSecret<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> <span class="token string">"Card"</span><span class="token punctuation">,</span>
+      billingDetails<span class="token operator">:</span> name<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Error: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>error<span class="token punctuation">.</span>code<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>error<span class="token punctuation">.</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>paymentIntent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Payment successful: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>paymentIntent<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>View style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>container<span class="token punctuation">}</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Text<span class="token operator">></span>Card<span class="token operator">&lt;</span><span class="token operator">/</span>Text<span class="token operator">></span>
+      <span class="token operator">&lt;</span>TextInput
+        style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">[</span>styles<span class="token punctuation">.</span>input<span class="token punctuation">,</span> nameFocused <span class="token operator">&amp;&amp;</span> <span class="token punctuation">{</span> borderBottomColor<span class="token operator">:</span> <span class="token string">"#5941A9"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+        placeholder<span class="token operator">=</span><span class="token string">"Name"</span>
+        placeholderTextColor<span class="token operator">=</span><span class="token string">"#B8B8B8"</span>
+        onChangeText<span class="token operator">=</span><span class="token punctuation">{</span>setName<span class="token punctuation">}</span>
+        value<span class="token operator">=</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span>
+        keyboardType<span class="token operator">=</span><span class="token string">"default"</span>
+        onFocus<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token function">setNameFocused</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        onBlur<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token function">setNameFocused</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>CardField
+        postalCodeEnabled<span class="token operator">=</span><span class="token punctuation">{</span><span class="token boolean">false</span><span class="token punctuation">}</span>
+        style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">[</span>styles<span class="token punctuation">.</span>cardField<span class="token punctuation">,</span> cardFocused <span class="token operator">&amp;&amp;</span> <span class="token punctuation">{</span> borderColor<span class="token operator">:</span> <span class="token string">"#5941A9"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+        cardStyle<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> textColor<span class="token operator">:</span> <span class="token string">"#fff"</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token comment">// onCardChange={cardDetails => setCard(cardDetails)}</span>
+        onFocus<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">focusedField</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"focusField"</span><span class="token punctuation">,</span> focusedField<span class="token punctuation">)</span>
+          <span class="token function">setCardFocused</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        onBlur<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token function">setCardFocused</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Pressable
+        style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>button<span class="token punctuation">}</span>
+        onPress<span class="token operator">=</span><span class="token punctuation">{</span>handlePayPress<span class="token punctuation">}</span>
+        disabled<span class="token operator">=</span><span class="token punctuation">{</span>loading<span class="token punctuation">}</span>
+      <span class="token operator">></span>
+        <span class="token operator">&lt;</span>Text style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span>label<span class="token punctuation">}</span><span class="token operator">></span>Pay<span class="token operator">&lt;</span><span class="token operator">/</span>Text<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Pressable<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>View<span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> styles <span class="token operator">=</span> StyleSheet<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  container<span class="token operator">:</span> <span class="token punctuation">{</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">"#141414"</span><span class="token punctuation">,</span>
+    flex<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    paddingHorizontal<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  cardField<span class="token operator">:</span> <span class="token punctuation">{</span>
+    height<span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+    borderColor<span class="token operator">:</span> <span class="token string">"#2F2258"</span><span class="token punctuation">,</span>
+    borderWidth<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    borderRadius<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    marginVertical<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  text<span class="token operator">:</span> <span class="token punctuation">{</span>
+    color<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  button<span class="token operator">:</span> <span class="token punctuation">{</span>
+    borderRadius<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    width<span class="token operator">:</span> <span class="token number">150</span><span class="token punctuation">,</span>
+    padding<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    alignItems<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    justifyContent<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">"#5941A9"</span><span class="token punctuation">,</span>
+    height<span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+    alignSelf<span class="token operator">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  label<span class="token operator">:</span> <span class="token punctuation">{</span>
+    fontSize<span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+    fontWeight<span class="token operator">:</span> <span class="token string">"800"</span><span class="token punctuation">,</span>
+    letterSpacing<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    textTransform<span class="token operator">:</span> <span class="token string">"uppercase"</span><span class="token punctuation">,</span>
+    color<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  input<span class="token operator">:</span> <span class="token punctuation">{</span>
+    color<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+    borderBottomColor<span class="token operator">:</span> <span class="token string">"#2F2258"</span><span class="token punctuation">,</span>
+    borderBottomWidth<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    height<span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+    fontSize<span class="token operator">:</span> <span class="token number">17</span><span class="token punctuation">,</span>
+    letterSpacing<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    paddingHorizontal<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<ul>
+<li>We are importing <code class="language-text">useConfirmPayment</code> which gives us <code class="language-text">confirmPayment()</code> method to confirm the payment, and <code class="language-text">loading</code> variable so we know when stripe is done.
+<ul>
+<li><code class="language-text">const {confirmPayment, loading} = useConfirmPayment();</code></li>
+</ul>
+</li>
+<li>In <code class="language-text">handlePayPress()</code> we make a request to <code class="language-text">/create-payment-intent</code> and give the <code class="language-text">paymentMethodType</code> and <code class="language-text">currency</code></li>
+<li>In resposne, we get <code class="language-text">clientSecret</code></li>
+<li>Then we can call <code class="language-text">confirmPayment()</code> and pass in <code class="language-text">clientSecret</code> and an object with <code class="language-text">type</code> and <code class="language-text">billingDetails</code></li>
+<li>Finally we can see if the payment was successful!</li>
+</ul>
+<h2>Run the app</h2>
+<p>Now we can run the app!</p>
+<ol>
+<li>Start the stripe server: <code class="language-text">node server.js</code></li>
+<li>Run react native app: <code class="language-text">react-native run-ios</code></li>
+<li>Click on Buy</li>
+<li>Fill in the name and card details</li>
+<li>Click Pay</li>
+</ol>
+<p>Finally you should get an alert that the payment was successful!</p></section><hr/><footer><div class="bio"><div data-gatsby-image-wrapper="" style="width:50px;height:50px" class="gatsby-image-wrapper bio-avatar"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#181808;width:50px;height:50px;position:relative"></div><picture><source type="image/avif" data-srcset="/static/73f1427cdf7031538e33052aa1240c7a/d4bf4/profile-pic.avif 50w,/static/73f1427cdf7031538e33052aa1240c7a/ee81f/profile-pic.avif 100w" sizes="50px"/><source type="image/webp" data-srcset="/static/73f1427cdf7031538e33052aa1240c7a/3faea/profile-pic.webp 50w,/static/73f1427cdf7031538e33052aa1240c7a/6a679/profile-pic.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" data-src="/static/73f1427cdf7031538e33052aa1240c7a/e5610/profile-pic.png" data-srcset="/static/73f1427cdf7031538e33052aa1240c7a/e5610/profile-pic.png 50w,/static/73f1427cdf7031538e33052aa1240c7a/e9b55/profile-pic.png 100w" alt="Profile picture"/></picture><noscript><picture><source type="image/avif" srcSet="/static/73f1427cdf7031538e33052aa1240c7a/d4bf4/profile-pic.avif 50w,/static/73f1427cdf7031538e33052aa1240c7a/ee81f/profile-pic.avif 100w" sizes="50px"/><source type="image/webp" srcSet="/static/73f1427cdf7031538e33052aa1240c7a/3faea/profile-pic.webp 50w,/static/73f1427cdf7031538e33052aa1240c7a/6a679/profile-pic.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" src="/static/73f1427cdf7031538e33052aa1240c7a/e5610/profile-pic.png" srcSet="/static/73f1427cdf7031538e33052aa1240c7a/e5610/profile-pic.png 50w,/static/73f1427cdf7031538e33052aa1240c7a/e9b55/profile-pic.png 100w" alt="Profile picture"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}</script></div><p>Written by <strong>Braden Wright</strong> <!-- -->who is striving to become a developer 👨🏼‍💻.<!-- --> <a href="https://twitter.com/Braden23763605">You should follow him on Twitter</a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li></li><li><a rel="next" href="/articles/09-23-2021_React_native_and_stripe_integration/articles/09-17-2021_Deploy-gatsby-on-github-pages">How to deploy a gatsby site with github pages<!-- --> →</a></li></ul></nav></main><footer class="footer">© <!-- -->2021<!-- --> Braden Wright<div><a href="https://bradenwrightportfolio.gatsbyjs.io/">portfolio</a> <!-- -->• <a href="https://github.com/brad0s">github</a> • <a href="https://twitter.com/Braden23763605">twitter</a> • <a href="https://www.linkedin.com/in/wright-braden/">linkedin</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/articles/09-23-2021_React_native_and_stripe_integration/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-af61bce6510bfff034c3.js"],"app":["/app-36b5580612c5bac90cd8.js"],"component---src-pages-404-js":["/component---src-pages-404-js-92cf2013ecb4628a95cd.js"],"component---src-pages-index-js":["/component---src-pages-index-js-23a3ed5c1efadbca6019.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-9bce82e63da9cd73203d.js"]};/*]]>*/</script><script src="/polyfill-af61bce6510bfff034c3.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-9bce82e63da9cd73203d.js" async=""></script><script src="/commons-69a2e1a158d1cf8bc945.js" async=""></script><script src="/app-36b5580612c5bac90cd8.js" async=""></script><script src="/framework-cf5212c73f65bdd9ee4a.js" async=""></script><script src="/webpack-runtime-b0eacb15146f79d84385.js" async=""></script></body></html>

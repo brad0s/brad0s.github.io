@@ -370,4 +370,14 @@ article > header {
   ol {
     list-style-position: inside;
   }
+  .footer {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer > div {
+    text-align: center;
+    flex-grow: 1;
+  }
 }
